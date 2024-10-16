@@ -1,8 +1,8 @@
 # HuggingFace-DiffusionModels
 
-##[HuggingFace Diffusion Models Class](https://github.com/darcula1993/diffusion-models-class-CN/)  
+## [HuggingFace Diffusion Models Class](https://github.com/darcula1993/diffusion-models-class-CN/)  
 
-###Unit2: Fine-Tuning, Guidance and Conditioning  
+### Unit2: Fine-Tuning, Guidance and Conditioning  
 
 Hands-On Notebook: 1. [Fine-tuning and Guidance](https://colab.research.google.com/github/huggingface/diffusion-models-class/blob/main/unit2/01_finetuning_and_guidance.ipynb)  
 
