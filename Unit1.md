@@ -9,3 +9,9 @@ Hands-On Notebook: 1. [Introduction to Diffusers](https://colab.research.google.
 pip install transformers diffusers datasets
 ```
 2.导入所需的模块：从diffusers和其他相关库中导入所需的类和函数。
+```
+from diffusers import UNet2DModel, DDPMScheduler
+from transformers import Trainer, TrainingArguments
+import torch
+from datasets import load_dataset
+```
