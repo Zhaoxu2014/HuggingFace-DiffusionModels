@@ -5,7 +5,7 @@ Hands-On Notebook: 1. [Introduction to Diffusers](https://colab.research.google.
 **关键流程：** <br>
 
 1.安装必要的库：安装 transformers, diffusers 以及其他相关的库。
-```
+``` Python
 pip install transformers diffusers datasets
 ```
 2.导入所需的模块：从diffusers和其他相关库中导入所需的类和函数。
