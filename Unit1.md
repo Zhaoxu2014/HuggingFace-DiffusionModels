@@ -20,7 +20,7 @@ from torchvision import transforms
 # ......
 ```
 3.准备数据集：
-```
+``` Python
 dataset = load_dataset("huggan/smithsonian_butterflies_subset", split="train")  # 使用来自 Hugging Face Hub 的 “smithsonian_butterflies_subset” 数据集
 # dataset = load_dataset("imagefolder", data_dir="path/to/folder")  # 或从本地文件夹加载数据集
 
@@ -50,7 +50,7 @@ train_dataloader = torch.utils.data.DataLoader(
 )
 ```
 4.定义和配置模型：创建或加载一个扩散模型，并对其进行适当的配置。
-```
+``` Python
 model = UNet2DModel(
     sample_size=32,  # 图片大小
     in_channels=3,   # 输入图片的通道数
@@ -72,7 +72,7 @@ model = UNet2DModel(
 )
 ```
 5.训练模型：使用数据集对模型进行训练，包括定义训练循环、优化器、损失函数等。
-```
+``` Python
 noise_scheduler = DDPMScheduler(num_train_timesteps=1000, beta_schedule="squaredcos_cap_v2")  # 调度器，训练过程中总的时间步数为1000，噪声强度的调度方式为平方余弦调度方式。
 
 optimizer = torch.optim.AdamW(model.parameters(), lr=4e-4)  # 优化器，使用AdamW优化器，学习率设置为0.0004。
@@ -115,7 +115,7 @@ for epoch in range(30):  # 总共训练30个周期（epochs）。
         print(f"Epoch:{epoch+1}, loss: {loss_last_epoch}")
 ```
 6.生成图像
-```
+``` Python
 # 方法1：建立一个Pipeline
 
 # 建立pipeline并输出图像
@@ -127,7 +127,7 @@ pipeline_output.images[0]
 image_pipe.save_pretrained("my_pipeline")  # 保存后"my_pipeline"目录下有model_index.json  scheduler  unet这样的文件。
 ```
 7.将模型Push到Huggingface Hub
-```
+``` Python
 # 登陆Huggingface
 huggingface-cli login
 
@@ -160,7 +160,7 @@ api.upload_file(
 )
 ```
 8.使用该模型
-```
+``` Python
 # 使用DDPMPipeline的from_pretrained ()方法加载此预训练模型来生成图像。
 from diffusers import DDPMPipeline
 
